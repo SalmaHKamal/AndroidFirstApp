@@ -21,9 +21,13 @@ pipeline {
             }
         }
         
-         stage('Test Push event') {
+        stage('Deploy to Firebase') {
             steps {
-                echo 'PUSH!!!@!!!!!#!!'
+                script {
+                    sh '''
+                    fastlane firebaseDistribution
+                    '''
+                }
             }
         }
     }
