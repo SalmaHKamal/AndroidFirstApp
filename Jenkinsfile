@@ -26,7 +26,7 @@ pipeline {
                 script {
                     sh """
                      echo 'will start deployment to firebase'
-                     fastlane qa
+                     ls
                     """
                 }
             }
