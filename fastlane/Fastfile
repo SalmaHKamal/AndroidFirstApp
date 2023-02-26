@@ -21,6 +21,26 @@ platform :android do
     gradle(task: "test")
   end
 
+#   lane :qa do
+#     gradle(task: "assemble")
+#     firebase_app_distribution(
+#     app: "1:1023208811872:android:84d94bee0643fce0ed8205",
+#     service_credentials_file: "/Users/salmahassan/Downloads/carbon-helix-160115-f408e4f6b589.json",
+#     groups: "test-fastlane",
+#     release_notes: "Lots of amazing new features to test out!"
+#   )
+#   end
+
+    lane :qa do
+        gradle(task: "assemble")
+        firebase_app_distribution(
+        app: "1:1023208811872:android:84d94bee0643fce0ed8205",
+        service_credentials_file: "/Users/salmahassan/Study/Session/androidfirstapp-5bc17-19a7f09523c0.json",
+        groups: "test-fastlane",
+        release_notes: "Lots of amazing new features to test out!"
+      )
+     end
+
   desc "Submit a new Beta Build to Crashlytics Beta"
   lane :beta do
     gradle(task: "clean assembleRelease")
