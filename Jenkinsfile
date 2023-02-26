@@ -12,20 +12,21 @@ pipeline {
         }
 
     stages {
-        stage('Print Selected Values') {
-            steps {
-                echo 'Selected Values are: \n'
-                echo params.buildType
-                echo 'environment variables are: \n'
-                echo env.BUILD_TYPE
-            }
-        }
+//         stage('Print Selected Values') {
+//             steps {
+//                 echo 'Selected Values are: \n'
+//                 echo params.buildType
+//                 echo 'environment variables are: \n'
+//                 echo env.BUILD_TYPE
+//             }
+//         }
         
         stage('Deploy to Firebase') {
             steps {
                 script {
                     sh """
-                    fastlane firebaseDistribution
+                     echo 'will start deployment to firebase'
+                     fastlane qa
                     """
                 }
             }
