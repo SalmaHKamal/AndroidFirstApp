@@ -23,7 +23,7 @@ pipeline {
         
          stage('Test Push event') {
             steps {
-                echo 'PUSH!!!@!!!!!!!'
+                echo 'PUSH!!!@!!!!!#!!'
             }
         }
     }
