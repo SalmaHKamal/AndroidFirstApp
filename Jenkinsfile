@@ -24,9 +24,9 @@ pipeline {
         stage('Deploy to Firebase') {
             steps {
                 script {
-                    sh '''
+                    sh """
                     fastlane firebaseDistribution
-                    '''
+                    """
                 }
             }
         }
