@@ -10,7 +10,7 @@ pipeline {
                description: 'The build types')
         booleanParam(name: 'Push_To_Remote', defaultValue: false, description: 'Toggle to push changes back to remote(check for repo permission on this)')
         }
-    evironment {
+    environment {
         PATH = "$HOME/.fastlane/bin:" +
                 "$HOME/.rvm/gems/ruby-2.5.3/bin:" +
                 "$HOME/.rvm/gems/ruby-2.5.3@global/bin:" +
