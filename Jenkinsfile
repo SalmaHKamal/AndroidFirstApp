@@ -32,16 +32,13 @@ pipeline {
         
         stage('Deploy to Firebase') {
             steps {
+                
                 script {
-                   sh """
-                   echo ls
-                   """
+                    sh """
+                     cp ~/androidfirstapp-5bc17-19a7f09523c0.json androidfirstapp-5bc17-19a7f09523c0.json
+                     fastlane firebaseDistribution
+                    """
                 }
-//                 script {
-//                     sh """
-//                      fastlane firebaseDistribution
-//                     """
-//                 }
             }
         }
     }
