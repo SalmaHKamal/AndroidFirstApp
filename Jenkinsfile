@@ -4,12 +4,12 @@ pipeline {
     */
     agent any
     
-    parameters {
-        // the default choice for commit-triggered builds is the first item in the choices list
-        choice(name: 'buildType', choices: ['Scan_only', 'Debug_firebaseDistribution', 'Release_AppStore_Testflight'],
-               description: 'The build types')
-        booleanParam(name: 'Push_To_Remote', defaultValue: false, description: 'Toggle to push changes back to remote(check for repo permission on this)')
-        }
+//     parameters {
+//         // the default choice for commit-triggered builds is the first item in the choices list
+//         choice(name: 'buildType', choices: ['Scan_only', 'Debug_firebaseDistribution', 'Release_AppStore_Testflight'],
+//                description: 'The build types')
+//         booleanParam(name: 'Push_To_Remote', defaultValue: false, description: 'Toggle to push changes back to remote(check for repo permission on this)')
+//         }
     environment {
         PATH = "$HOME/.fastlane/bin:" +
                 "$HOME/.rvm/gems/ruby-2.5.3/bin:" +
@@ -35,7 +35,7 @@ pipeline {
                 script {
                     sh """
                      echo 'will start deployment to firebase'
-                     echo $HOME
+                     echo '================================='
                      fastlane firebaseDistribution
                     """
                 }
