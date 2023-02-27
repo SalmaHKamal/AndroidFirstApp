@@ -34,10 +34,13 @@ pipeline {
             steps {
                 
                 script {
-                    sh """
-                     cp ~/androidfirstapp-5bc17-19a7f09523c0.json androidfirstapp-5bc17-19a7f09523c0.json
-                     fastlane firebaseDistribution
-                    """
+                    withCredentials([file(credentialsId: 'firebase_key', variable: 'GOOGLE_APPLICATION_CREDENTIALS')]) {
+                        sh """
+                        cp ~/androidfirstapp-5bc17-19a7f09523c0.json androidfirstapp-5bc17-19a7f09523c0.json
+                        fastlane firebaseDistribution
+                        """
+                    }
+                    
                 }
             }
         }
