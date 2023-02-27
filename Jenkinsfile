@@ -33,12 +33,15 @@ pipeline {
         stage('Deploy to Firebase') {
             steps {
                 script {
-                    sh """
-                     echo 'will start deployment to firebase'
-                     echo '================================='
-                     fastlane firebaseDistribution
-                    """
+                   sh """
+                   echo ls
+                   """
                 }
+//                 script {
+//                     sh """
+//                      fastlane firebaseDistribution
+//                     """
+//                 }
             }
         }
     }
