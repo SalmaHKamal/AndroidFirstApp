@@ -41,7 +41,7 @@ platform :android do
     gradle(task: "assemble")
     firebase_app_distribution(
         app: "1:1023208811872:android:84d94bee0643fce0ed8205",
-        service_credentials_file: "/Users/salmahassan/Study/Session/androidfirstapp-5bc17-19a7f09523c0.json",
+        service_credentials_file: "./androidfirstapp-5bc17-19a7f09523c0.json",
         groups: "test-fastlane",
         release_notes: "Lots of amazing new features to test out!"
       )
