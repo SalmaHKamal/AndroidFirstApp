@@ -17,7 +17,7 @@ pipeline {
                 "$HOME/.rvm/rubies/ruby-2.5.3/bin:" +
                 "/usr/local/bin:" +
                 "$PATH"
-        ANDROID_HOME = "/Users/salmahassan/Library/Android/sdk"
+        ANDROID_HOME = "$HOME/Library/Android/sdk"
     }
 
     stages {
